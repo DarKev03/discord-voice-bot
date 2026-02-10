@@ -53,9 +53,9 @@ async def on_voice_state_update(member, before, after):
     if member.bot:
         return
     
-    # Detectar si el usuario entró a un canal de voz sin haber estado antes en uno y si es diferente de mi mismo
+    # Detectar si el usuario entró a un canal de voz sin haber estado antes en uno 
     
-    if before.channel is None and after.channel is not None and member.id != int(NOTIFY_USER_ID):
+    if before.channel is None and after.channel is not None:
         logger.info(f'🎤 {member.name} entró al canal de voz: {after.channel.name}')
         
         try:
